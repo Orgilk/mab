@@ -121,7 +121,7 @@ app.post("/verify-code", (req, res) => {
         return res.json({ success: false, message: "Invalid verification code." });
     }
 
-    const expirationTime = 1 * 60 * 1000; // 1 minute in milliseconds
+    const expirationTime = 1 * 30 * 1000; // 1 minute in milliseconds
     if (Date.now() - timestamp > expirationTime) {
         return res.json({ success: false, message: "Verification code has expired." });
     }
